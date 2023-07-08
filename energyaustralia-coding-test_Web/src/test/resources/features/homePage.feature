@@ -1,6 +1,6 @@
-Feature: Login
+Feature: Home Page
 @Home
-  Scenario: Successful login with valid credentials
+  Scenario: Verify Details in Home Page
     Given User Launch Browser
     When User open URL "http://localhost:4200/festivals"
     Then Verify user landed to Home page
