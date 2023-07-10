@@ -14,8 +14,11 @@ public class HomePagePageObjects {
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
-    @FindBy(xpath = "/html/body/app-root/app-festivals")
+    @FindBy(xpath = "//li")
     private WebElement allFestivals;
+
+    @FindBy(xpath = "//li[contains(text(),'Adrian Venti')]")
+    private WebElement adrianVentiFestival;
 
     public void verifyHeader() {
         String expectedTittle="EaCoding Test";
@@ -32,5 +35,11 @@ public class HomePagePageObjects {
         }else{
             System.out.print("festivals are not displayed");
         }
+    }
+    public void verifyFestivalName(String festivalName) {
+        String festText=adrianVentiFestival.getText();
+        SoftAssertions sa =new SoftAssertions();
+        sa.assertThat(festivalName).isEqualTo(festText);
+        sa.assertAll();
     }
 }
