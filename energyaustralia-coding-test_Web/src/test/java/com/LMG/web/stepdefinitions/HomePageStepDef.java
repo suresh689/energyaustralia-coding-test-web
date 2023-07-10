@@ -50,4 +50,9 @@ public class HomePageStepDef {
         hpo=new HomePagePageObjects(driver);
         hpo.verifyFestivals();
     }
+    @Then("^Verify \"([^\"]*)\" festival$")
+    public void verifyFestival(String festivalName) {
+        hpo=new HomePagePageObjects(driver);
+        hpo.verifyFestivalName(festivalName);
+    }
 }
