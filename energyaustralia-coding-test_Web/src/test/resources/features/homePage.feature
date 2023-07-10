@@ -5,4 +5,5 @@ Feature: Home Page
     When User open URL "http://localhost:4200/festivals"
     Then Verify user landed to Home page
     And Verify festivals displayed
+    Then Verify "Adrian Venti" festival
     And close browser
